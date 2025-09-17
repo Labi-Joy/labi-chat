@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "setup": "chmod +x scripts/setup.sh && scripts/setup.sh",
+    "deploy:contracts": "cd contracts && chmod +x ../scripts/deploy-contracts.sh && ../scripts/deploy-contracts.sh",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit",
+    "contracts:compile": "cd contracts && forge build",
+    "contracts:test": "cd contracts && forge test",
+    "contracts:deploy:sepolia": "cd contracts && forge script contracts/deploy/Deploy.s.sol:DeployScript --rpc-url sepolia --broadcast --verify",
+    "contracts:deploy:lisk": "cd contracts && forge script contracts/deploy/Deploy.s.sol:DeployScript --rpc-url lisk_sepolia --broadcast"
+  }
+}
